@@ -1,6 +1,6 @@
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SRCS = push_swap.c error_exit.c checkarg.c put_into.c pushandswap.c upsanddowns.c rotate.c revrotate.c radix.c
+SRCS = push_swap.c error_exit.c checkarg.c put_into.c pushandswap.c upsanddowns.c rotate.c revrotate.c radix.c getindex.c sort_small.c
 OBJS = $(SRCS:.c=.o)
 LIB = ./lib/libft/libft.a ./lib/ft_printf/libftprintf.a
 CC = gcc
@@ -19,6 +19,7 @@ fclean: clean
 		$(RM) ./push_swap.a
 		@make fclean -C ./lib/libft
 		@make fclean -C ./lib/ft_printf
+		$(RM) $(NAME)
 
 clean:
 		$(RM) $(OBJS)
@@ -26,5 +27,6 @@ clean:
 		@make clean -C ./lib/ft_printf
 
 re: fclean all
+	@clear
 
 .PHONY: all clean fclean re
